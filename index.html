@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Célula Fotovoltaica</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Célula Fotovoltaica</h1>
+        <form id="ip-form">
+            <label for="ip">Endereço IP do ESP (Para a temperatura do módulo):</label>
+            <input type="text" id="ip" placeholder="Digite o endereço IP (sem http://)" required>
+            <button type="submit">Conectar</button>
+        </form>
+        <div id="result-container"></div>
+        <div id="controls">
+            <label for="irradiancia">Irradiância Solar (W/m²): </label>
+            <input type="number" id="irradiancia" value="0">
+
+            <label for="temperatura_modulo">Temperatura do Módulo (°C): </label>
+            <input type="number" id="tmod" value="0">
+
+            <label for="temperatura">
+                <div id="text_temp">Temperatura (°C) em Novo Hamburgo - RS: </div>
+            </label>
+            <input type="number" id="temperatura" value="">
+
+            <label for="voc">Tensão de circuito aberto (Voc):</label>
+            <input type="number" id="voc" value="22.65">
+            
+            <label for="isc">Corrente de curto-circuito (Isc):</label>
+            <input type="number" id="isc" value="3.8">
+            
+            <label for="vm">Tensão na máxima potência (Vmpp):</label>
+            <input type="number" id="vm" value="18.53">
+            
+            <label for="im">Corrente na máxima potência (Impp):</label>
+            <input type="number" id="im" value="3.592">
+            
+            <label for="pm">Potência máxima:</label>
+            <input type="number" id="pm" value="66.6">
+            
+            <label for="ff">Fator de Forma:</label>
+            <input type="number" id="ff" value="0.773">
+
+            <div id="simular">
+                <button class="comum" onclick="buscaValores()">Simular</button>
+            </div>
+        </div>   
+    </div>
+    <div id="assinatura">Arthur e Augusto - Turma 4411</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
